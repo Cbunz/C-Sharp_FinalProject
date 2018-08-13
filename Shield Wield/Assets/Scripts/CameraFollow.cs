@@ -25,7 +25,7 @@ public class CameraFollow : MonoBehaviour {
 
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Girl");
         rb = player.GetComponent<Rigidbody2D>();
         coll = player.GetComponent<CapsuleCollider2D>();
         focusArea = new FocusArea(coll.bounds, focusAreaSize);

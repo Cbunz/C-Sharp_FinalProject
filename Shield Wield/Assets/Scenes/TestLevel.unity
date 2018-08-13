@@ -274,6 +274,11 @@ Prefab:
       propertyPath: onGroundLayerMask.m_Bits
       value: 32768
       objectReference: {fileID: 0}
+    - target: {fileID: 114708775991396710, guid: 31e8a4b860893dd4e96850e785e815ec,
+        type: 2}
+      propertyPath: spriteOriginallyFacesLeft
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 95618206373526172, guid: 31e8a4b860893dd4e96850e785e815ec, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 31e8a4b860893dd4e96850e785e815ec, type: 2}
@@ -537,10 +542,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a49544ec7a1cc43943e655bfddf79c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalOffset: 1.25
-  lookAheadDstX: 0.3
-  lookSmoothTimeX: 0.5
-  verticalSmoothTime: 0.05
+  verticalOffset: 1
+  lookAheadDstX: 1
+  lookSmoothTimeX: 0.2
+  verticalSmoothTime: 0.1
   focusAreaSize: {x: 1.8, y: 2.5}
 --- !u!1 &1483828147
 GameObject:

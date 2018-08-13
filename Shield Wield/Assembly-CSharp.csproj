@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\SceneController.cs" />
     <Compile Include="Assets\Scripts\SceneNameAttribute.cs" />
     <Compile Include="Assets\Scripts\SceneTransitionDestination.cs" />
+    <Compile Include="Assets\Scripts\ScreenFader.cs" />
     <Compile Include="Assets\Scripts\TransitionPoint.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Connor/Desktop/Unity/Unity Projects/Shield Wield/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

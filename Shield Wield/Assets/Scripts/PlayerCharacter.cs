@@ -168,6 +168,24 @@ public class PlayerCharacter : MonoBehaviour {
         UpdateCameraFollowTargetPosition();
     }
 
+    public void Unpause()
+    {
+        if (Time.timeScale > 0)
+            return;
+
+        StartCoroutine(UnpauseCoroutine());
+    }
+
+    protected IEnumerator UnpauseCoroutine()
+    {
+        Time.timeScale = 1;
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("UIMenus");
+        PlayerInput.Instance.GainControl();
+        yield return new WaitForFixedUpdate();
+        yield return new WaitForEndOfFrame();
+        inPause = false;
+    }
+
     protected void UpdateCameraFollowTargetPosition()
     {
         float newLocalPosX;
@@ -349,6 +367,30 @@ public class PlayerCharacter : MonoBehaviour {
         }
     }
 
+    public void EnableInvulnerability()
+    {
+        damageable.EnableInvulnerability();
+    }
+
+    public void DisableInvulnerability()
+    {
+        damageable.DisableInvulnerability();
+    }
+
+    public Vector2 GetHurtDirection()
+    {
+        Vector2 damageDirection = damageable.GetDamageDirection();
+
+        if (damageDirection.y < 0f)
+        {
+            return new Vector2(Mathf.Sign(damageDirection.x), 0f);
+        }
+
+        float y = Mathf.Abs(damageDirection.x) * tanHurtJumpAngle;
+
+        return new Vector2(damageDirection.x, y).normalized;
+    }
+
     public void OnHurt(Damager damager, Damageable damageable)
     {
         if (!PlayerInput.Instance.HaveControl)
@@ -363,7 +405,14 @@ public class PlayerCharacter : MonoBehaviour {
 
         if (damageable.CurrentHealth > 0 && damager.forceRespawn)
         {
-            animator
+            animator.SetTrigger(hashForcedRespawnPara);
+        }
+
+        animator.SetBool(hashGroundedPara, false);
+
+        if (damager.forceRespawn && damageable.CurrentHealth > 0)
+        {
+            StartCoroutine(DieRespawnCoroutine(false, true));
         }
     }
 
