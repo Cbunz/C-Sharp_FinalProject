@@ -49,11 +49,15 @@ MonoBehaviour:
 =======
     width: 1920
     height: 997
+<<<<<<< HEAD
   m_MinSize: {x: 950, y: 542}
 >>>>>>> master
 =======
   m_MinSize: {x: 950, y: 300}
 >>>>>>> parent of b42d5d1... Fixed animations
+=======
+  m_MinSize: {x: 950, y: 300}
+>>>>>>> AddAI
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -125,14 +129,18 @@ MonoBehaviour:
 =======
     width: 1920
     height: 947
-  m_MinSize: {x: 681, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 107
 >>>>>>> master
 =======
   controlID: 70
 >>>>>>> parent of b42d5d1... Fixed animations
+=======
+  controlID: 112
+>>>>>>> AddAI
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,11 +173,15 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 108
 >>>>>>> master
 =======
   controlID: 71
 >>>>>>> parent of b42d5d1... Fixed animations
+=======
+  controlID: 113
+>>>>>>> AddAI
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -195,6 +207,7 @@ MonoBehaviour:
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 85
 =======
   controlID: 109
@@ -207,6 +220,9 @@ MonoBehaviour:
   vertical: 0
   controlID: 72
 >>>>>>> parent of b42d5d1... Fixed animations
+=======
+  controlID: 114
+>>>>>>> AddAI
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,6 +242,7 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 355
     height: 605
+<<<<<<< HEAD
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
 =======
@@ -234,6 +251,10 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
 >>>>>>> parent of b42d5d1... Fixed animations
+=======
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> AddAI
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -338,12 +359,17 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 447
     height: 947
+<<<<<<< HEAD
 =======
     width: 372
     height: 767
 >>>>>>> parent of b42d5d1... Fixed animations
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
+>>>>>>> AddAI
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -464,6 +490,7 @@ MonoBehaviour:
 =======
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: ae5afaffe671faff64a7faffc4c3fbffaa28fcff72bffdff5efbffff60fbffff00000000
 >>>>>>> master
 =======
@@ -471,6 +498,9 @@ MonoBehaviour:
     m_LastClickedID: 0
     m_ExpandedIDs: e4fbffffe6fbffff00000000
 >>>>>>> parent of b42d5d1... Fixed animations
+=======
+    m_ExpandedIDs: 60fbffff00000000
+>>>>>>> AddAI
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -527,6 +557,7 @@ MonoBehaviour:
   m_Position:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 0.19867857, y: 0.7078992, z: 0.1309258}
     speed: 2
     m_Value: {x: 0.19867857, y: 0.7078992, z: 0.1309258}
@@ -540,6 +571,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.64019865, y: 0.8095814, z: 0.015155033}
 >>>>>>> parent of b42d5d1... Fixed animations
+=======
+    m_Target: {x: 0.036283046, y: 2.3536685, z: 0.10387548}
+    speed: 2
+    m_Value: {x: 0.036283046, y: 2.3536685, z: 0.10387548}
+>>>>>>> AddAI
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -573,6 +609,7 @@ MonoBehaviour:
   m_Size:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 7.66796
     speed: 2
     m_Value: 7.66796
@@ -586,6 +623,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 19.25805
 >>>>>>> parent of b42d5d1... Fixed animations
+=======
+    m_Target: 24.073471
+    speed: 2
+    m_Value: 24.073471
+>>>>>>> AddAI
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -799,6 +841,7 @@ MonoBehaviour:
     m_LastClickedID: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000880900002a0b0000
 =======
     m_ExpandedIDs: 00000000aa0900004a0b0000
@@ -806,6 +849,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 0000000074090000140b0000
 >>>>>>> parent of b42d5d1... Fixed animations
+=======
+    m_ExpandedIDs: 00000000aa0900000e0a00004a0b0000700b0000
+>>>>>>> AddAI
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
