@@ -56,7 +56,7 @@ public class AttackingAI : MonoBehaviour
 
     void Engage()
     {
-        theRigidBody.AddForce(transform.forward * engageSpeed);
+        //theRigidBody.AddForce(transform.forward * engageSpeed);
         //transform.Translate(Vector3.forward * engageSpeed * Time.deltaTime);
     }
 }
