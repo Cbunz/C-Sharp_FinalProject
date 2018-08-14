@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [RequireComponent(typeof(CharacterController2D))]
+[RequireComponent(typeof(Animator))]
 
 public class PlayerCharacter : MonoBehaviour {
 
@@ -20,13 +21,17 @@ public class PlayerCharacter : MonoBehaviour {
         get { return inventoryController; }
     }
 
-    public Damageable damageable;
-    public Damager damager;
+    // Sprites
     public SpriteRenderer spriteRenderer;
     public bool spriteOriginallyFacesLeft;
     protected bool startingFacingLeft = false;
 
-    
+    // Damage
+    public Damageable damageable;
+    public Damager meleeDamager;
+    public float meleeAttackDashSpeed = 5f;
+    public bool dashWhileAirborne = false;
+
     // Flicker
     protected WaitForSeconds flickeringWait;
     protected Coroutine flickerCoroutine;
@@ -39,10 +44,10 @@ public class PlayerCharacter : MonoBehaviour {
     [Range(minHurtJumpAngle, maxHurtJumpAngle)] public float hurtJumpAngle = 45f;
     public float hurtJumpSpeed = 5f;
 
-
     // Movement
     protected CharacterController2D characterController2D;
-    protected CapsuleCollider2D coll;
+    // protected CapsuleCollider2D _collider;
+    protected BoxCollider2D _collider;
     protected Vector2 startingPosition = Vector2.zero;
     protected Vector2 moveVector;
     public float maxSpeed = 10f;
@@ -90,7 +95,8 @@ public class PlayerCharacter : MonoBehaviour {
         playerInstance = this;
         characterController2D = GetComponent<CharacterController2D>();
         inventoryController = GetComponent<InventoryController>();
-        coll = GetComponent<CapsuleCollider2D>();
+        _collider = GetComponent<BoxCollider2D>();
+        // _collider = GetComponent<CapsuleCollider2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
     }
@@ -100,6 +106,8 @@ public class PlayerCharacter : MonoBehaviour {
         hurtJumpAngle = Mathf.Clamp(hurtJumpAngle, minHurtJumpAngle, maxHurtJumpAngle);
         tanHurtJumpAngle = Mathf.Tan(Mathf.Deg2Rad * hurtJumpAngle);
         flickeringWait = new WaitForSeconds(flickeringDuration);
+
+        meleeDamager.DisableDamage();
 
         if (!Mathf.Approximately(maxHorizontalDeltaDampTime, 0f))
         {
@@ -168,6 +176,9 @@ public class PlayerCharacter : MonoBehaviour {
         UpdateCameraFollowTargetPosition();
     }
 
+
+    // PAUSE
+
     public void Unpause()
     {
         if (Time.timeScale > 0)
@@ -232,6 +243,9 @@ public class PlayerCharacter : MonoBehaviour {
 
         cameraFollowTarget.localPosition = new Vector2(newLocalPosX, newLocalPosY);
     }
+
+
+    // MOVEMENT
 
     public void SetMoveVector(Vector2 newMoveVector)
     {
@@ -349,6 +363,13 @@ public class PlayerCharacter : MonoBehaviour {
         moveVector.y -= gravity * Time.deltaTime;
     }
 
+    public bool IsFalling()
+    {
+        return moveVector.y < 0f && !animator.GetBool(hashGroundedPara);
+    }
+
+    // JUMP
+
     public bool CheckForJumpInput()
     {
         return PlayerInput.Instance.Jump.Down;
@@ -367,6 +388,38 @@ public class PlayerCharacter : MonoBehaviour {
         }
     }
 
+
+    // MELEE ATTACK
+
+    public bool CheckForMeleeAttackInput()
+    {
+        return PlayerInput.Instance.MeleeAttack.Down;
+    }
+
+    public void MeleeAttack()
+    {
+        animator.SetTrigger(hashMeleeAttackPara);
+    }
+
+    public void EnableMeleeAttack()
+    {
+        meleeDamager.EnableDamage();
+        meleeDamager.disableDamageAfterHit = true;
+    }
+
+    public void DisableMeleeAttack()
+    {
+        meleeDamager.DisableDamage();
+    }
+
+    public void TeleportToColliderBottom()
+    {
+        Vector2 colliderBottom = characterController2D.Rigidbody.position + _collider.offset + Vector2.down * _collider.size.y * 0.5f;
+        characterController2D.Teleport(colliderBottom);
+    }
+
+    // INVULNERABILITY
+
     public void EnableInvulnerability()
     {
         damageable.EnableInvulnerability();
@@ -376,6 +429,37 @@ public class PlayerCharacter : MonoBehaviour {
     {
         damageable.DisableInvulnerability();
     }
+
+
+    // FLICKER
+
+    protected IEnumerator Flicker()
+    {
+        float timer = 0f;
+
+        while (timer < damageable.invulnerabilityDuration)
+        {
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+            yield return flickeringWait;
+            timer += flickeringDuration;
+        }
+
+        spriteRenderer.enabled = true;
+    }
+
+    public void StartFlickering()
+    {
+        flickerCoroutine = StartCoroutine(Flicker());
+    }
+
+    public void StopFlickering()
+    {
+        StopCoroutine(flickerCoroutine);
+        spriteRenderer.enabled = true;
+    }
+
+
+    // TAKE DAMAGE
 
     public Vector2 GetHurtDirection()
     {
@@ -416,6 +500,9 @@ public class PlayerCharacter : MonoBehaviour {
         }
     }
 
+
+    // DIE
+
     public void OnDie()
     {
         animator.SetTrigger(hashDeadPara);
@@ -438,6 +525,9 @@ public class PlayerCharacter : MonoBehaviour {
         PlayerInput.Instance.GainControl();
     }
 
+
+    // RESPAWN
+
     public void Respawn(bool resetHealth, bool useCheckpoint)
     {
         if (resetHealth)
@@ -445,14 +535,14 @@ public class PlayerCharacter : MonoBehaviour {
             damageable.SetHealth(damageable.startingHealth);
         }
 
-        /*
+        
         animator.ResetTrigger(hashHurtPara);
         if (flickerCoroutine != null)
         {
             StopFlickering();
         }
-        animator.SetTrigget(hashRespawnPara);
-        */
+        animator.SetTrigger(hashRespawnPara);
+        
 
         if (useCheckpoint && lastCheckpoint != null)
         {

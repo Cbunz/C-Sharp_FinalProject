@@ -81,6 +81,16 @@
     <Compile Include="Assets\Scripts\SceneNameAttribute.cs" />
     <Compile Include="Assets\Scripts\SceneTransitionDestination.cs" />
     <Compile Include="Assets\Scripts\ScreenFader.cs" />
+    <Compile Include="Assets\Scripts\State Machine Behavior\AirborneSMB.cs" />
+    <Compile Include="Assets\Scripts\State Machine Behavior\AirMeleeAttackSMB.cs" />
+    <Compile Include="Assets\Scripts\State Machine Behavior\CharacterStateSetter.cs" />
+    <Compile Include="Assets\Scripts\State Machine Behavior\DeathLandingSMB.cs" />
+    <Compile Include="Assets\Scripts\State Machine Behavior\DeathSMB.cs" />
+    <Compile Include="Assets\Scripts\State Machine Behavior\MeleeAttackSMB.cs" />
+    <Compile Include="Assets\Scripts\State Machine Behavior\MovementSMB.cs" />
+    <Compile Include="Assets\Scripts\State Machine Behavior\RespawnSMB.cs" />
+    <Compile Include="Assets\Scripts\State Machine Behavior\SceneLinkedSMB.cs" />
+    <Compile Include="Assets\Scripts\State Machine Behavior\TakeDamageSMB.cs" />
     <Compile Include="Assets\Scripts\TransitionPoint.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Connor/Desktop/C# Final Project/C-Sharp_FinalProject/Shield Wield/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

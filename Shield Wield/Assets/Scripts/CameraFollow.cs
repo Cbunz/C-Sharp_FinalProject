@@ -14,7 +14,8 @@ public class CameraFollow : MonoBehaviour {
 
     private FocusArea focusArea;
     private Rigidbody2D rb;
-    private CapsuleCollider2D coll;
+    private BoxCollider2D coll;
+    // private CapsuleCollider2D coll;
     private float currentLookAheadX;
     private float playerLookAheadX;
     private float lookAheadDirX;
@@ -27,7 +28,8 @@ public class CameraFollow : MonoBehaviour {
     {
         player = GameObject.Find("Girl");
         rb = player.GetComponent<Rigidbody2D>();
-        coll = player.GetComponent<CapsuleCollider2D>();
+        coll = player.GetComponent<BoxCollider2D>();
+        // coll = player.GetComponent<CapsuleCollider2D>();
         focusArea = new FocusArea(coll.bounds, focusAreaSize);
     }
 

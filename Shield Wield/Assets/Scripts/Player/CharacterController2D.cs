@@ -10,8 +10,9 @@ public class CharacterController2D : MonoBehaviour {
     public LayerMask onGroundLayerMask;
     public float onGroundRaycastDistance = 0.1f;
 
-    CapsuleCollider2D coll;
-    Rigidbody2D rb;
+    BoxCollider2D _collider;
+    // CapsuleCollider2D _collider;
+    Rigidbody2D _rigidbody;
     ContactFilter2D contactFilter;
     RaycastHit2D[] hitResults = new RaycastHit2D[5];
     RaycastHit2D[] foundHits = new RaycastHit2D[3];
@@ -24,18 +25,19 @@ public class CharacterController2D : MonoBehaviour {
     public bool OnGround { get; protected set; }
     public bool OnCeiling { get; protected set; }
     public Vector2 Velocity { get; protected set; }
-    public Rigidbody2D RB { get { return rb; } }
+    public Rigidbody2D Rigidbody { get { return _rigidbody; } }
     public Collider2D[] GroundColliders { get { return groundColliders; } }
     public ContactFilter2D ContactFilter { get { return contactFilter; } }
 
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<CapsuleCollider2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
+        _collider = GetComponent<BoxCollider2D>();
+        // _collider = GetComponent<CapsuleCollider2D>();
 
-        currentPosition = rb.position;
-        previousPosition = rb.position;
+        currentPosition = _rigidbody.position;
+        previousPosition = _rigidbody.position;
 
         contactFilter.layerMask = onGroundLayerMask;
         contactFilter.useLayerMask = true;
@@ -46,11 +48,11 @@ public class CharacterController2D : MonoBehaviour {
 
     void FixedUpdate()
     {
-        previousPosition = rb.position;
+        previousPosition = _rigidbody.position;
         currentPosition = previousPosition + nextMovement;
         Velocity = (currentPosition - previousPosition) / Time.deltaTime;
 
-        rb.MovePosition(currentPosition);
+        _rigidbody.MovePosition(currentPosition);
         nextMovement = Vector2.zero;
 
         CheckCapsuleEndCollisions();
@@ -62,15 +64,23 @@ public class CharacterController2D : MonoBehaviour {
         nextMovement += movement;
     }
 
+    public void Teleport(Vector2 position)
+    {
+        Vector2 delta = position - currentPosition;
+        previousPosition += delta;
+        currentPosition = position;
+        _rigidbody.MovePosition(position);
+    }
+
     public void CheckCapsuleEndCollisions(bool bottom = true)
     {
         Vector2 raycastDirection;
         Vector2 raycastStart;
         float raycastDistance;
 
-        if (coll == null)
+        if (_collider == null)
         {
-            raycastStart = rb.position + Vector2.up;
+            raycastStart = _rigidbody.position + Vector2.up;
             raycastDistance = 1f + onGroundRaycastDistance;
 
             if (bottom)
@@ -92,26 +102,26 @@ public class CharacterController2D : MonoBehaviour {
         }
         else
         {
-            raycastStart = rb.position + coll.offset;
-            raycastDistance = coll.size.x * .5f + onGroundRaycastDistance * 2f;
+            raycastStart = _rigidbody.position + _collider.offset;
+            raycastDistance = _collider.size.x * .5f + onGroundRaycastDistance * 2f;
 
             if (bottom)
             {
                 raycastDirection = Vector2.down;
-                Vector2 raycastStartBottomCenter = raycastStart + Vector2.down * (coll.size.y * 0.5f - coll.size.x * 0.5f);
+                Vector2 raycastStartBottomCenter = raycastStart + Vector2.down * (_collider.size.y * 0.5f - _collider.size.x * 0.5f);
 
-                raycastPositions[0] = raycastStartBottomCenter + Vector2.left * coll.size.x * 0.5f;
+                raycastPositions[0] = raycastStartBottomCenter + Vector2.left * _collider.size.x * 0.5f;
                 raycastPositions[1] = raycastStartBottomCenter;
-                raycastPositions[2] = raycastStartBottomCenter + Vector2.right * coll.size.x * 0.5f;
+                raycastPositions[2] = raycastStartBottomCenter + Vector2.right * _collider.size.x * 0.5f;
             }
             else
             {
                 raycastDirection = Vector2.up;
-                Vector2 raycastStartTopCenter = raycastStart + Vector2.up * (coll.size.y * 0.5f - coll.size.x * 0.5f);
+                Vector2 raycastStartTopCenter = raycastStart + Vector2.up * (_collider.size.y * 0.5f - _collider.size.x * 0.5f);
 
-                raycastPositions[0] = raycastStartTopCenter + Vector2.left * coll.size.x * 0.5f;
+                raycastPositions[0] = raycastStartTopCenter + Vector2.left * _collider.size.x * 0.5f;
                 raycastPositions[1] = raycastStartTopCenter;
-                raycastPositions[2] = raycastStartTopCenter + Vector2.right * coll.size.x * 0.5f;
+                raycastPositions[2] = raycastStartTopCenter + Vector2.right * _collider.size.x * 0.5f;
             }
         }
 
@@ -160,7 +170,7 @@ public class CharacterController2D : MonoBehaviour {
                 groundNormal.Normalize();
             }
 
-            Vector2 relativeVelocity = rb.velocity;
+            Vector2 relativeVelocity = _rigidbody.velocity;
 
             /*
             for (int i = 0; i < groundColliders.Length; i++)
@@ -188,11 +198,11 @@ public class CharacterController2D : MonoBehaviour {
             {
                 OnGround = (relativeVelocity.y <= 0f);
 
-                if (coll != null)
+                if (_collider != null)
                 {
                     if (groundColliders[1] != null)
                     {
-                        float colliderBottomHeight = rb.position.y + coll.offset.y - coll.size.y * 0.5f;
+                        float colliderBottomHeight = _rigidbody.position.y + _collider.offset.y - _collider.size.y * 0.5f;
                         float middleHitHeight = foundHits[1].point.y;
                         OnGround &= (middleHitHeight < colliderBottomHeight + onGroundRaycastDistance);
                     }
