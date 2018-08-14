@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 492}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -44,12 +44,16 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 1600
     height: 817
+<<<<<<< HEAD
   m_MinSize: {x: 950, y: 492}
 =======
     width: 1920
     height: 997
   m_MinSize: {x: 950, y: 542}
 >>>>>>> master
+=======
+  m_MinSize: {x: 950, y: 300}
+>>>>>>> parent of b42d5d1... Fixed animations
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -113,9 +117,10 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 1600
     height: 767
-  m_MinSize: {x: 683, y: 442}
-  m_MaxSize: {x: 12008, y: 8042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 83
 =======
     width: 1920
@@ -125,6 +130,9 @@ MonoBehaviour:
   vertical: 0
   controlID: 107
 >>>>>>> master
+=======
+  controlID: 70
+>>>>>>> parent of b42d5d1... Fixed animations
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,9 +154,10 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 1228
     height: 767
-  m_MinSize: {x: 406, y: 442}
-  m_MaxSize: {x: 8006, y: 8042}
+  m_MinSize: {x: 404, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 84
 =======
     width: 1473
@@ -158,6 +167,9 @@ MonoBehaviour:
   vertical: 1
   controlID: 108
 >>>>>>> master
+=======
+  controlID: 71
+>>>>>>> parent of b42d5d1... Fixed animations
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,6 +188,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1473
     height: 605
   m_MinSize: {x: 406, y: 221}
@@ -186,6 +199,14 @@ MonoBehaviour:
 =======
   controlID: 109
 >>>>>>> master
+=======
+    width: 1228
+    height: 490
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
+  vertical: 0
+  controlID: 72
+>>>>>>> parent of b42d5d1... Fixed animations
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -202,10 +223,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 355
     height: 605
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
+=======
+    width: 296
+    height: 490
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> parent of b42d5d1... Fixed animations
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -258,6 +286,7 @@ MonoBehaviour:
     y: 490
     width: 1228
     height: 277
+<<<<<<< HEAD
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 19}
@@ -269,10 +298,16 @@ MonoBehaviour:
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 17}
 >>>>>>> master
+=======
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 17}
+>>>>>>> parent of b42d5d1... Fixed animations
   m_Panes:
   - {fileID: 17}
   - {fileID: 18}
   - {fileID: 19}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_Selected: 2
   m_LastSelected: 0
@@ -280,6 +315,10 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 1
 >>>>>>> master
+=======
+  m_Selected: 0
+  m_LastSelected: 1
+>>>>>>> parent of b42d5d1... Fixed animations
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -296,8 +335,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1473
     y: 0
+<<<<<<< HEAD
     width: 447
     height: 947
+=======
+    width: 372
+    height: 767
+>>>>>>> parent of b42d5d1... Fixed animations
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
@@ -413,6 +457,7 @@ MonoBehaviour:
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedIDs: dc0a0000
     m_LastClickedID: 0
     m_ExpandedIDs: e6fbffff00000000f0110000
@@ -421,6 +466,11 @@ MonoBehaviour:
     m_LastClickedID: 0
     m_ExpandedIDs: ae5afaffe671faff64a7faffc4c3fbffaa28fcff72bffdff5efbffff60fbffff00000000
 >>>>>>> master
+=======
+    m_SelectedIDs: 8a370000
+    m_LastClickedID: 0
+    m_ExpandedIDs: e4fbffffe6fbffff00000000
+>>>>>>> parent of b42d5d1... Fixed animations
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -476,6 +526,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 0.19867857, y: 0.7078992, z: 0.1309258}
     speed: 2
     m_Value: {x: 0.19867857, y: 0.7078992, z: 0.1309258}
@@ -484,6 +535,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -1.3295112, y: 1.5044079, z: 0.20247798}
 >>>>>>> master
+=======
+    m_Target: {x: -0.64019865, y: 0.8095814, z: 0.015155033}
+    speed: 2
+    m_Value: {x: -0.64019865, y: 0.8095814, z: 0.015155033}
+>>>>>>> parent of b42d5d1... Fixed animations
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -516,6 +572,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 7.66796
     speed: 2
     m_Value: 7.66796
@@ -524,6 +581,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 14.195256
 >>>>>>> master
+=======
+    m_Target: 19.25805
+    speed: 2
+    m_Value: 19.25805
+>>>>>>> parent of b42d5d1... Fixed animations
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -567,11 +629,19 @@ MonoBehaviour:
     - e00: 1
       e01: 0
       e02: 0
+<<<<<<< HEAD
       e03: -3
       e10: 0
       e11: 1
       e12: 0
       e13: 249
+=======
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+>>>>>>> parent of b42d5d1... Fixed animations
       e20: 0
       e21: 0
       e22: 1
@@ -657,6 +727,7 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/Player/Sprites
   m_ViewMode: 1
   m_StartGridSize: 63
@@ -669,6 +740,13 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/PixelArtSideScrollerPack/blue
 >>>>>>> master
+=======
+    - Assets/Scripts
+  m_ViewMode: 1
+  m_StartGridSize: 63
+  m_LastFolders:
+  - Assets/Scripts
+>>>>>>> parent of b42d5d1... Fixed animations
   m_LastFoldersGridSize: 63
   m_LastProjectPath: D:\2018 HW\C#\CloneResp_Final\C-Sharp_FinalProject\Shield Wield\Shield
     Wield
@@ -677,6 +755,7 @@ MonoBehaviour:
   m_FolderTreeState:
 <<<<<<< HEAD
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 92090000
     m_LastClickedID: 2450
     m_ExpandedIDs: 0000000088090000ee0900002a0b0000
@@ -686,20 +765,25 @@ MonoBehaviour:
     m_LastClickedID: 4066
     m_ExpandedIDs: 00000000aa0900000e0a00004a0b0000700b000000ca9a3b
 >>>>>>> master
+=======
+    m_SelectedIDs: c2090000
+    m_LastClickedID: 2498
+    m_ExpandedIDs: 0000000074090000140b0000
+>>>>>>> parent of b42d5d1... Fixed animations
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Enemies
+      m_OriginalName: Enemies
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 3982
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -714,10 +798,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000880900002a0b0000
 =======
     m_ExpandedIDs: 00000000aa0900004a0b0000
 >>>>>>> master
+=======
+    m_ExpandedIDs: 0000000074090000140b0000
+>>>>>>> parent of b42d5d1... Fixed animations
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -743,6 +831,7 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedInstanceIDs: dc0a0000
     m_LastClickedInstanceID: 2780
     m_HadKeyboardFocusLastEvent: 1
@@ -753,6 +842,12 @@ MonoBehaviour:
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: b4280000223b0000fa2a00000000000030110000a00b0000520c000020110000d40a0000820b0000320c0000da0e0000
 >>>>>>> master
+=======
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: b4280000223b0000fa2a00000000000030110000a00b0000520c000020110000d40a0000820b0000320c0000
+>>>>>>> parent of b42d5d1... Fixed animations
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -833,10 +928,14 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LastSelectedObjectID: 4552
 =======
   m_LastSelectedObjectID: -294134
 >>>>>>> master
+=======
+  m_LastSelectedObjectID: -1052
+>>>>>>> parent of b42d5d1... Fixed animations
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52

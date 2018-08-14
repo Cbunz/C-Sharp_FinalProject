@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [RequireComponent(typeof(CharacterController2D))]
-// [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Animator))]
 
 public class PlayerCharacter : MonoBehaviour {
 
