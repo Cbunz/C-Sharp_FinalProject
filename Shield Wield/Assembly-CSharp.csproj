@@ -61,15 +61,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AttackingAI.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Checkpoint.cs" />
+    <Compile Include="Assets\Scripts\CubeAI.cs" />
     <Compile Include="Assets\Scripts\Damageable.cs" />
     <Compile Include="Assets\Scripts\Damager.cs" />
-    <Compile Include="Assets\Scripts\GameObjectTeleporter.cs" />
-    <Compile Include="Assets\Scripts\IDataPersister.cs" />
     <Compile Include="Assets\Scripts\LayerMaskExtensions.cs" />
+    <Compile Include="Assets\Scripts\MiddleLevelAI.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
-    <Compile Include="Assets\Scripts\PersistentDataManager.cs" />
     <Compile Include="Assets\Scripts\PhysicsHelper.cs" />
     <Compile Include="Assets\Scripts\Player\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\Player\InputComponent.cs" />
@@ -77,21 +77,27 @@
     <Compile Include="Assets\Scripts\Player\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCharacter.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInput.cs" />
-    <Compile Include="Assets\Scripts\SceneController.cs" />
-    <Compile Include="Assets\Scripts\SceneNameAttribute.cs" />
-    <Compile Include="Assets\Scripts\SceneTransitionDestination.cs" />
-    <Compile Include="Assets\Scripts\ScreenFader.cs" />
-    <Compile Include="Assets\Scripts\State Machine Behavior\AirborneSMB.cs" />
-    <Compile Include="Assets\Scripts\State Machine Behavior\AirMeleeAttackSMB.cs" />
-    <Compile Include="Assets\Scripts\State Machine Behavior\CharacterStateSetter.cs" />
-    <Compile Include="Assets\Scripts\State Machine Behavior\DeathLandingSMB.cs" />
-    <Compile Include="Assets\Scripts\State Machine Behavior\DeathSMB.cs" />
-    <Compile Include="Assets\Scripts\State Machine Behavior\MeleeAttackSMB.cs" />
-    <Compile Include="Assets\Scripts\State Machine Behavior\MovementSMB.cs" />
-    <Compile Include="Assets\Scripts\State Machine Behavior\RespawnSMB.cs" />
-    <Compile Include="Assets\Scripts\State Machine Behavior\SceneLinkedSMB.cs" />
-    <Compile Include="Assets\Scripts\State Machine Behavior\TakeDamageSMB.cs" />
-    <Compile Include="Assets\Scripts\TransitionPoint.cs" />
+    <Compile Include="Assets\Scripts\player_Enter.cs" />
+    <Compile Include="Assets\Scripts\SceneManagement\CharacterStateSetter.cs" />
+    <Compile Include="Assets\Scripts\SceneManagement\GameObjectTeleporter.cs" />
+    <Compile Include="Assets\Scripts\SceneManagement\IDataPersister.cs" />
+    <Compile Include="Assets\Scripts\SceneManagement\PersistentDataManager.cs" />
+    <Compile Include="Assets\Scripts\SceneManagement\SavedData.cs" />
+    <Compile Include="Assets\Scripts\SceneManagement\SceneController.cs" />
+    <Compile Include="Assets\Scripts\SceneManagement\SceneControllerWrapper.cs" />
+    <Compile Include="Assets\Scripts\SceneManagement\SceneNameAttribute.cs" />
+    <Compile Include="Assets\Scripts\SceneManagement\SceneTransitionDestination.cs" />
+    <Compile Include="Assets\Scripts\SceneManagement\ScreenFader.cs" />
+    <Compile Include="Assets\Scripts\SceneManagement\TransitionPoint.cs" />
+    <Compile Include="Assets\Scripts\StateMachineBehavior\AirborneSMB.cs" />
+    <Compile Include="Assets\Scripts\StateMachineBehavior\AirMeleeAttackSMB.cs" />
+    <Compile Include="Assets\Scripts\StateMachineBehavior\DeathLandingSMB.cs" />
+    <Compile Include="Assets\Scripts\StateMachineBehavior\DeathSMB.cs" />
+    <Compile Include="Assets\Scripts\StateMachineBehavior\MeleeAttackSMB.cs" />
+    <Compile Include="Assets\Scripts\StateMachineBehavior\MovementSMB.cs" />
+    <Compile Include="Assets\Scripts\StateMachineBehavior\RespawnSMB.cs" />
+    <Compile Include="Assets\Scripts\StateMachineBehavior\SceneLinkedSMB.cs" />
+    <Compile Include="Assets\Scripts\StateMachineBehavior\TakeDamageSMB.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Connor/Desktop/C# Final Project/C-Sharp_FinalProject/Shield Wield/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
