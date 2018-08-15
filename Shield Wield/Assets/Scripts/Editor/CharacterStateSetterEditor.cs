@@ -180,8 +180,36 @@ public class CharacterStateSetterEditor : Editor {
         {
             if (parameterNames[i] == parameterNameProperty.stringValue)
             {
-
+                parameterNameIndex = i;
+                parameterTypeProperty.enumValueIndex = (int)parameterTypes[i];
             }
+        }
+
+        Rect position = EditorGUILayout.GetControlRect(false, EditorGUIUtility.singleLineHeight);
+        Rect nameLabelRect = new Rect(position.x, position.y, position.width * 0.2f, EditorGUIUtility.singleLineHeight);
+        Rect nameControlRect = new Rect(nameLabelRect.x + nameLabelRect.width, position.y, position.width * 0.3f, position.height);
+        Rect valueLabelRect = new Rect(nameControlRect.x + nameControlRect.width, position.y, position.width * 0.2f, position.height);
+        Rect valueControlRect = new Rect(valueLabelRect.x + valueLabelRect.width, position.y, position.width * 0.3f, position.height);
+
+        EditorGUI.LabelField(nameLabelRect, parameterSetterNameContent);
+        parameterNameIndex = EditorGUI.Popup(nameControlRect, GUIContent.none.text, parameterNameIndex, parameterNames);
+        parameterNameProperty.stringValue = parameterNames[parameterNameIndex];
+        parameterTypeProperty.enumValueIndex = (int)parameterTypes[parameterNameIndex];
+
+        switch ((CharacterStateSetter.ParameterSetter.ParameterType)parameterTypeProperty.enumValueIndex)
+        {
+            case CharacterStateSetter.ParameterSetter.ParameterType.Bool:
+                EditorGUI.LabelField(valueLabelRect, parameterSetterValueContent);
+                EditorGUI.PropertyField(valueControlRect, boolValueProperty, GUIContent.none);
+                break;
+            case CharacterStateSetter.ParameterSetter.ParameterType.Float:
+                EditorGUI.LabelField(valueLabelRect, parameterSetterValueContent);
+                EditorGUI.PropertyField(valueControlRect, floatValueProperty, GUIContent.none);
+                break;
+            case CharacterStateSetter.ParameterSetter.ParameterType.Int:
+                EditorGUI.LabelField(valueLabelRect, parameterSetterValueContent);
+                EditorGUI.PropertyField(valueControlRect, intValueProperty, GUIContent.none);
+                break;
         }
     }
 }
