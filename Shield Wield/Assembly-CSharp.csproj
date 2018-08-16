@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\CubeAI.cs" />
     <Compile Include="Assets\Scripts\Damageable.cs" />
     <Compile Include="Assets\Scripts\Damager.cs" />
+    <Compile Include="Assets\Scripts\FlyingEnemyScript.cs" />
     <Compile Include="Assets\Scripts\LayerMaskExtensions.cs" />
     <Compile Include="Assets\Scripts\MiddleLevelAI.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
