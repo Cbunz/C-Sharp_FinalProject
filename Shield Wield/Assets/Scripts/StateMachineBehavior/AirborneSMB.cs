@@ -14,6 +14,7 @@ public class AirborneSMB : SceneLinkedSMB<PlayerCharacter>
         monoBehaviour.CheckOnGround();
         if (monoBehaviour.CheckForMeleeAttackInput())
         {
+            Debug.Log("Melee Atack");
             monoBehaviour.MeleeAttack();
         }
     }

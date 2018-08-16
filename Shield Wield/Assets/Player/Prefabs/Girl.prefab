@@ -244,10 +244,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c044940a44d7bf49b4c374826cf3bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageable: {fileID: 0}
-  damager: {fileID: 0}
   spriteRenderer: {fileID: 0}
   spriteOriginallyFacesLeft: 1
+  damageable: {fileID: 0}
+  meleeDamager: {fileID: 0}
+  meleeAttackDashSpeed: 5
+  dashWhileAirborne: 0
   flickeringDuration: 0.1
   hurtJumpAngle: 45
   hurtJumpSpeed: 5
@@ -289,7 +291,7 @@ MonoBehaviour:
   MeleeAttack:
     key: 107
     controllerButton: 3
-    enabled: 0
+    enabled: 1
   RangedAttack:
     key: 111
     controllerButton: 2

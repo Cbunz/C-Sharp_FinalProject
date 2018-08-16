@@ -77,7 +77,7 @@ public class PlayerCharacter : MonoBehaviour {
     protected readonly int hashHorizontalSpeedPara = Animator.StringToHash("HorizontalSpeed");
     protected readonly int hashVerticalSpeedPara = Animator.StringToHash("VerticalSpeed");
     protected readonly int hashGroundedPara = Animator.StringToHash("OnGround");
-    protected readonly int hashCrouchingPara = Animator.StringToHash("Crouching");
+    // protected readonly int hashCrouchingPara = Animator.StringToHash("Crouching");
     // protected readonly int hashPushingPara = Animator.StringToHash("Pushing");
     // protected readonly int hashTimeoutPara = Animator.StringToHash("Timeout");
     protected readonly int hashRespawnPara = Animator.StringToHash("Respawn");

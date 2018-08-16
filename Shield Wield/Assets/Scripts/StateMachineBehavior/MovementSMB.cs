@@ -22,6 +22,7 @@ public class MovementSMB : SceneLinkedSMB<PlayerCharacter>
         }
         else if (monoBehaviour.CheckForMeleeAttackInput())
         {
+            Debug.Log("Melee Atack");
             monoBehaviour.MeleeAttack();
         }
     }

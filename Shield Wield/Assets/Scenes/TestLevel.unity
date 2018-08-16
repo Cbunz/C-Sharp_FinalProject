@@ -2895,6 +2895,78 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.03125}
   m_EdgeRadius: 0
+--- !u!114 &1393431043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1393431036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecafd69d316c5294bb13aa7fc46da38f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 5
+  invulnerableAfterDamage: 1
+  invulnerabilityDuration: 3
+  disableOnDeath: 0
+  centerOffset: {x: 0, y: 1}
+  OnHealthSet:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Damageable+HealthEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnGainHealth:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Damageable+HealEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Damageable+DamageEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Damageable+DamageEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  dataSettings:
+    dataTag: d169d173-03a1-4178-b7b1-9f24a7b68aaf
+    persistenceType: 3
+--- !u!114 &1393431044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1393431036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4edc9d795bd5e7469f41c3d4319e04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDamageableHit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Damager+DamageableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnNonDamageableHit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Damager+NonDamageableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  damage: 1
+  spriteRenderer: {fileID: 0}
+  hittableLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  offset: {x: 1.5, y: 1}
+  size: {x: 2.5, y: 1}
+  offsetBasedOnSpriteFacing: 1
+  canHitTriggers: 0
+  disableDamageAfterHit: 0
+  forceRespawn: 0
+  ignoreInvincibility: 0
 --- !u!1 &1397141998
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,7 +3798,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   hittableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   offset: {x: 1.5, y: 1}
   size: {x: 2.5, y: 1}
   offsetBasedOnSpriteFacing: 1

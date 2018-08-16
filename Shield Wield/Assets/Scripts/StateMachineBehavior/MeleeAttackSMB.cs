@@ -20,7 +20,7 @@ public class MeleeAttackSMB : SceneLinkedSMB<PlayerCharacter>
             animator.Play(hashAirMeleeAttackState, layerIndex, stateInfo.normalizedTime);
         }
 
-        monoBehaviour.GroundHorizontalMovement(false);
+        monoBehaviour.GroundHorizontalMovement(true);
     }
 
     public override void OnSLStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
