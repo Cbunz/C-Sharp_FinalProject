@@ -14,6 +14,7 @@ public class MeleeAttackSMB : SceneLinkedSMB<PlayerCharacter>
 
     public override void OnSLStateNoTransitionUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Debug.Log("Melee Attack state");
         if (!monoBehaviour.CheckOnGround())
         {
             animator.Play(hashAirMeleeAttackState, layerIndex, stateInfo.normalizedTime);

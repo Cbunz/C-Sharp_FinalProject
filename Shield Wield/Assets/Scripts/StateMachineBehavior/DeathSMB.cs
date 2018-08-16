@@ -11,6 +11,7 @@ public class DeathSMB : SceneLinkedSMB<PlayerCharacter>
 
     public override void OnSLStateNoTransitionUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Debug.Log("Death state");
         monoBehaviour.CheckOnGround();
         monoBehaviour.AirVerticalMovement();
     }

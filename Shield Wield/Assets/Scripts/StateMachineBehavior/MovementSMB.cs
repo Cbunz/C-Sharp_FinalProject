@@ -11,6 +11,7 @@ public class MovementSMB : SceneLinkedSMB<PlayerCharacter>
 
     public override void OnSLStateNoTransitionUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Debug.Log("Movement State");
         monoBehaviour.UpdateFacing();
         monoBehaviour.GroundHorizontalMovement(true);
         monoBehaviour.GroundVerticalMovement();

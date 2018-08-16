@@ -2,8 +2,8 @@ fileFormatVersion: 2
 guid: 52f7baef4971cb1499b35499359db5ac
 TextureImporter:
   fileIDToRecycleName:
-    21300000: girl_anticip_0
-    21300002: girl_anticip_1
+    21300000: girl_damage_0
+    21300002: girl_damage_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -86,7 +86,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: girl_anticip_0
+      name: girl_damage_0
       rect:
         serializedVersion: 2
         x: 0
@@ -106,7 +106,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: girl_anticip_1
+      name: girl_damage_1
       rect:
         serializedVersion: 2
         x: 34

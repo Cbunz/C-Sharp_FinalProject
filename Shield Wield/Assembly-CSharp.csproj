@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\LayerMaskExtensions.cs" />
     <Compile Include="Assets\Scripts\MiddleLevelAI.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
+    <Compile Include="Assets\Scripts\ParameterSetterDrawer.cs" />
     <Compile Include="Assets\Scripts\PhysicsHelper.cs" />
     <Compile Include="Assets\Scripts\Player\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\Player\InputComponent.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Assets\Scripts\StateMachineBehavior\RespawnSMB.cs" />
     <Compile Include="Assets\Scripts\StateMachineBehavior\SceneLinkedSMB.cs" />
     <Compile Include="Assets\Scripts\StateMachineBehavior\TakeDamageSMB.cs" />
+    <Compile Include="Assets\Scripts\TransitionStartEditor.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Connor/Desktop/C# Final Project/C-Sharp_FinalProject/Shield Wield/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

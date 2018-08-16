@@ -12,6 +12,7 @@ public class TakeDamageSMB : SceneLinkedSMB<PlayerCharacter>
 
     public override void OnSLStateNoTransitionUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Debug.Log("Take Damage State");
         if (monoBehaviour.IsFalling())
         {
             monoBehaviour.CheckOnGround();

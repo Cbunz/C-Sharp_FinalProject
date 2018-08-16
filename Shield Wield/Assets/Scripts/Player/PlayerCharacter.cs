@@ -76,7 +76,7 @@ public class PlayerCharacter : MonoBehaviour {
     protected Animator animator;
     protected readonly int hashHorizontalSpeedPara = Animator.StringToHash("HorizontalSpeed");
     protected readonly int hashVerticalSpeedPara = Animator.StringToHash("VerticalSpeed");
-    protected readonly int hashGroundedPara = Animator.StringToHash("Grounded");
+    protected readonly int hashGroundedPara = Animator.StringToHash("OnGround");
     protected readonly int hashCrouchingPara = Animator.StringToHash("Crouching");
     // protected readonly int hashPushingPara = Animator.StringToHash("Pushing");
     // protected readonly int hashTimeoutPara = Animator.StringToHash("Timeout");
@@ -121,6 +121,8 @@ public class PlayerCharacter : MonoBehaviour {
             camFollowVerticalSpeed = maxVerticalDelta / maxVerticalDeltaDampTime;
         }
 
+        SceneLinkedSMB<PlayerCharacter>.Initialise(animator, this);
+
         startingPosition = transform.position;
         startingFacingLeft = (GetFacing() < 0.0f);
     }
@@ -151,28 +153,9 @@ public class PlayerCharacter : MonoBehaviour {
 
     void FixedUpdate()
     {
-        UpdateFacing();
-
-        if (CheckOnGround())
-        {
-            GroundHorizontalMovement(true);
-            GroundVerticalMovement();
-            if (CheckForJumpInput())
-            {
-                SetVerticalMovement(jumpSpeed);
-            }
-        }
-        else
-        {
-            AirHorizontalMovement();
-            AirVerticalMovement();
-            if (!CheckForJumpInput())
-            {
-                UpdateJump();
-            }
-        }
-
         characterController2D.Move(moveVector * Time.deltaTime);
+        animator.SetFloat(hashHorizontalSpeedPara, moveVector.x);
+        animator.SetFloat(hashVerticalSpeedPara, moveVector.y);
         UpdateCameraFollowTargetPosition();
     }
 
@@ -333,7 +316,11 @@ public class PlayerCharacter : MonoBehaviour {
 
     public bool CheckOnGround()
     {
+        bool wasOnGround = animator.GetBool(hashGroundedPara);
         bool onGround = characterController2D.OnGround;
+
+        animator.SetBool(hashGroundedPara, onGround);
+
         return onGround;
     }
 
